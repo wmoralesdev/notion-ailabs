@@ -31,8 +31,8 @@ type Dict = {
     secondaryCta: string
     eligibility: string
     claimSteps: [string, string, string]
-    spec: {
-      rows: Array<{ label: string; value: string }>
+    qr: {
+      alt: string
     }
   }
   whyNotion: {
@@ -92,13 +92,8 @@ const dictionaries: Record<Locale, Dict> = {
         "Completá el signup en Notion Business + AI.",
         "Notion aplica el crédito de 3 meses según las reglas de su programa de afiliados.",
       ],
-      spec: {
-        rows: [
-          { label: "Plan", value: "Notion Business + AI" },
-          { label: "Duración", value: "3 meses" },
-          { label: "Audiencia", value: "Equipos con email corporativo" },
-          { label: "Crédito", value: "Programa de afiliados de Notion" },
-        ],
+      qr: {
+        alt: "Código QR que abre notion.ailabs.sv",
       },
     },
     whyNotion: {
@@ -183,13 +178,8 @@ const dictionaries: Record<Locale, Dict> = {
         "Finish signup for Notion Business + AI.",
         "Notion applies the 3-month credit under its affiliate program rules.",
       ],
-      spec: {
-        rows: [
-          { label: "Plan", value: "Notion Business + AI" },
-          { label: "Duration", value: "3 months" },
-          { label: "Audience", value: "Teams on a company email" },
-          { label: "Credit", value: "Notion affiliate program" },
-        ],
+      qr: {
+        alt: "QR code that opens notion.ailabs.sv",
       },
     },
     whyNotion: {

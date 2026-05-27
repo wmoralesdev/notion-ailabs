@@ -6,6 +6,8 @@
  * Notion affiliate link is exclusive to this microsite.
  */
 
+export const SITE_URL = "https://notion.ailabs.sv" as const
+
 export const AFFILIATE_LINK =
   "https://affiliate.notion.so/ofeyqdmkp0tr" as const
 

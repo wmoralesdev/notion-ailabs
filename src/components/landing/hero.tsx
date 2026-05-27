@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 
+import { HeroQr } from "@/components/landing/hero-qr"
 import { NotionLogo } from "@/components/notion-logo"
 import { useLocale } from "@/lib/i18n"
 import { AFFILIATE_LINK } from "@/lib/links"
@@ -29,7 +30,7 @@ export function Hero() {
             "[data-motion='hero-headline-em']",
             "[data-motion='hero-sub']",
             "[data-motion='hero-cta'] > *",
-            "[data-motion='hero-spec'] > div",
+            "[data-motion='hero-qr']",
           ]
           const decor = "[data-motion='hero-decor']"
 
@@ -77,12 +78,11 @@ export function Hero() {
               "-=0.5",
             )
             .to(
-              "[data-motion='hero-spec'] > div",
+              "[data-motion='hero-qr']",
               {
                 autoAlpha: 1,
                 y: 0,
                 duration: 0.55,
-                stagger: motion.stagger.tight,
               },
               "-=0.55",
             )
@@ -149,8 +149,8 @@ export function Hero() {
             {t.hero.sub}
           </p>
 
-          <div className="mt-4 lg:hidden">
-            <SpecSummary />
+          <div className="mt-6 lg:hidden">
+            <HeroQr />
           </div>
 
           <div
@@ -176,39 +176,13 @@ export function Hero() {
           </div>
         </div>
 
-        <aside className="hidden lg:col-span-5 lg:col-start-8 lg:block lg:py-2">
-          <SpecSummary />
+        <aside className="hidden lg:col-span-5 lg:col-start-8 lg:block lg:justify-self-end lg:pt-7">
+          <HeroQr />
         </aside>
       </div>
 
       <DecorRule className="absolute inset-x-0 bottom-0" />
     </section>
-  )
-}
-
-function SpecSummary() {
-  const { t } = useLocale()
-  const { spec } = t.hero
-
-  return (
-    <dl
-      data-motion="hero-spec"
-      className="border-t border-border/70 pt-6"
-    >
-      {spec.rows.map((row) => (
-        <div
-          key={row.label}
-          className="flex items-baseline justify-between gap-6 border-b border-border/50 py-3.5 last:border-b-0"
-        >
-          <dt className="shrink-0 font-mono text-xs text-muted-foreground">
-            {row.label}
-          </dt>
-          <dd className="text-right font-display text-sm font-medium tracking-tight text-foreground">
-            {row.value}
-          </dd>
-        </div>
-      ))}
-    </dl>
   )
 }
 
