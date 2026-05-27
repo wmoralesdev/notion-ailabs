@@ -149,7 +149,7 @@ export function Hero() {
             {t.hero.sub}
           </p>
 
-          <div className="mt-6 lg:hidden">
+          <div className="mt-6 flex justify-center lg:hidden">
             <HeroQr />
           </div>
 
