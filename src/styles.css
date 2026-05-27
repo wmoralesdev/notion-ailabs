@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --brand-ink: oklch(0.205 0.018 285);
+  --brand-paper: oklch(0.975 0.008 96);
+  --brand-surface: oklch(0.947 0.013 98);
+  --brand-violet: #8b7bc7;
+  --brand-violet-strong: #715fb5;
+  --brand-lavender: #a78bfa;
+  --brand-mint: #bfe8d4;
+  --brand-apricot: #f4c38e;
+  --background: var(--brand-paper);
+  --foreground: var(--brand-ink);
+  --card: oklch(0.994 0.004 96);
+  --card-foreground: var(--brand-ink);
+  --popover: oklch(0.994 0.004 96);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-violet);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--brand-surface);
+  --secondary-foreground: var(--brand-ink);
+  --muted: oklch(0.917 0.012 98);
+  --muted-foreground: oklch(0.545 0.016 285);
+  --accent: oklch(0.91 0.033 292);
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.5771 0.215 27.33);
+  --border: oklch(0.86 0.015 98);
+  --input: oklch(0.875 0.014 98);
+  --ring: var(--brand-lavender);
+  --chart-1: var(--brand-violet);
+  --chart-2: var(--brand-lavender);
+  --chart-3: var(--brand-mint);
+  --chart-4: var(--brand-apricot);
+  --chart-5: oklch(0.38 0.032 285);
+  --radius: 0.625rem;
+  --sidebar: var(--brand-surface);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-violet);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.91 0.033 292);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: oklch(0.86 0.015 98);
+  --sidebar-ring: var(--brand-lavender);
+}
+
+.dark {
+  --brand-ink: oklch(0.957 0.01 96);
+  --brand-paper: oklch(0.18 0.018 285);
+  --brand-surface: oklch(0.235 0.018 285);
+  --background: var(--brand-paper);
+  --foreground: var(--brand-ink);
+  --card: oklch(0.235 0.018 285);
+  --card-foreground: var(--brand-ink);
+  --popover: oklch(0.235 0.018 285);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-violet);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.285 0.019 285);
+  --secondary-foreground: var(--brand-ink);
+  --muted: oklch(0.285 0.019 285);
+  --muted-foreground: oklch(0.69 0.014 285);
+  --accent: oklch(0.31 0.045 292);
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.6368 0.208 25.33);
+  --border: oklch(0.33 0.018 285);
+  --input: oklch(0.33 0.018 285);
+  --ring: var(--brand-lavender);
+  --chart-1: var(--brand-violet);
+  --chart-2: var(--brand-lavender);
+  --chart-3: var(--brand-mint);
+  --chart-4: var(--brand-apricot);
+  --chart-5: oklch(0.79 0.025 96);
+  --sidebar: oklch(0.235 0.018 285);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-violet);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.31 0.045 292);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: oklch(0.33 0.018 285);
+  --sidebar-ring: var(--brand-lavender);
+}
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono:
+    'SFMono-Regular', 'Cascadia Code', 'Liberation Mono', ui-monospace,
+    monospace;
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-paper: var(--brand-paper);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-violet-strong: var(--brand-violet-strong);
+  --color-brand-lavender: var(--brand-lavender);
+  --color-brand-mint: var(--brand-mint);
+  --color-brand-apricot: var(--brand-apricot);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  #por-que,
+  #oferta,
+  #quienes-somos {
+    scroll-margin-top: 6rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .section-spacing {
+    @apply py-20 md:py-28;
+  }
+
+  .eyebrow-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .text-display-hero {
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 6.4vw, 6rem);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .text-display-section {
+    font-family: var(--font-display);
+    font-size: clamp(2.125rem, 4.4vw, 4rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .text-heading-section {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .text-body-lead {
+    font-size: clamp(1rem, 1.4vw, 1.1875rem);
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  /* The Ableton-bold purple block. Cream type on --brand-violet-strong
+     (the deeper violet), full bleed. One per page (the offer section); the
+     hero earns a smaller purple emphasis on a single phrase instead of a
+     full second slab.
+
+     We use --brand-violet-strong (oklch ~0.52) rather than --brand-violet
+     (~0.62) so cream-on-purple body text comfortably clears WCAG AA.
+     Measured contrast at α=1.0: H2 5.02, body 5.02, mono 5.02 (target ≥4.5
+     for small text, ≥3.0 for large). Hold the line: no opacity modifiers on
+     text inside this block — they cost contrast for no design benefit. */
+  .offer-purple-block {
+    background: var(--brand-violet-strong);
+    color: oklch(0.985 0.005 96);
+    --foreground: oklch(0.985 0.005 96);
+    --muted-foreground: color-mix(
+      in oklch,
+      oklch(0.985 0.005 96) 88%,
+      var(--brand-violet-strong)
+    );
+    --border: color-mix(
+      in oklch,
+      oklch(0.985 0.005 96) 30%,
+      transparent
+    );
+  }
+
+}
